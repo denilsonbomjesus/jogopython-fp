@@ -90,6 +90,10 @@ def jogar():
 
             j += 1
 
+        #canhao se fica no canto superior da tela
+        xCanhao = LIMITE-118
+        yCanhao = LIMITE_VERT/2
+
         # COMANDOS DO USUÁRIO
         if (kbhit()):
             c = hitKey()
@@ -106,10 +110,15 @@ def jogar():
                         bala["traj"]["A"] = coefAng
                         bala["traj"]["B"] = 2
                         break
-            elif (c == 'a' or c == 'A'):
-                coefAng = max(-3, coefAng - 1)
-            elif (c == 'd' or c == 'D'):
+            elif (ord(c) == ord('a')) or (ord(c) == ord('A')):
                 coefAng = min(coefAng + 1, 3)
+            elif (ord(c) == ord('d')) or (ord(c) == ord('D')):
+                coefAng = max(-3, coefAng - 1)
+
+            elif (ord(c) == ord('w')) or (ord(c) == ord('W')):
+                yCanhao -= 1
+            elif (ord(c) == ord('x')) or (ord(c) == ord('X')):
+                yCanhao += 1
 
         # apaga, move e desenha balas
         for bala in balas:
@@ -124,12 +133,14 @@ def jogar():
                 else:
                     gotoxy(bala["x"], bala["y"])
                     print('o',end='')
-        #canhao se fica no canto superior da tela
-        xCanhao = LIMITE-118
-        yCanhao = LIMITE_VERT/2
+
+        #apagar canhao:
+        gotoxy(xCanhao, yCanhao)
+        print(' ', end='')
+
         # Desenha canhão:
         gotoxy(xCanhao, yCanhao)
-        print( '\\' if (coefAng < 0) else ('/' if (coefAng > 0) else '_'), end='', flush=True)
+        print( '/' if (coefAng > 0) else '_', end='', flush=True)
 
         acertou = 0
         for bala in balas:

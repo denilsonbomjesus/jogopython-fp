@@ -7,6 +7,7 @@ def exibirMenu():
     print("3 - SAIR")
     print("Escolha uma opcao: ", end='')
 
+'''
 def jogar():
     print("Jogando...")
     console.pause()
@@ -39,3 +40,4 @@ while True:
     else:
         print("Bye bye!")
         exit(0)
+        '''

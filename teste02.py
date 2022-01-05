@@ -28,9 +28,9 @@ def jogar():
               {"x":0, "y":0, "ativa": False, "traj": {"A":0, "B":0, "C":0}},
               {"x":0, "y":0, "ativa": False, "traj": {"A":0, "B":0, "C":0}}]
     
-    pigs = [ { "img": "1", "x":0, "y":0, "ativo": False},
-               { "img":"2", "x":0, "y":0, "ativo": False},
-               { "img":"3", "x":0, "y":0, "ativo": False}]
+    pigs = [ { "img": "U + 1F602", "x":0, "y":0, "ativo": False},
+               { "img":"ð", "x":0, "y":0, "ativo": False},
+               { "img":"ð", "x":0, "y":0, "ativo": False}]
     
     pontuacaoJogador = 0.0
     coefAng = 0
@@ -75,10 +75,10 @@ def jogar():
                         break
             elif (ord(c) == ord('a') or ord(c) == ord('A')):
                 ang -= 1
-                bird["traj"]["A"] = (max(ang, 4 - bird["traj"]["C"])) / ((LIMITE) * (LIMITE/4 - LIMITE))
+                bird["traj"]["A"] = (max(ang, 4 - bird["traj"]["C"])) / (((LIMITE) * (LIMITE - LIMITE))/4)
             elif (ord(c) == ord('d') or ord(c) == ord('D')):
                 ang += 1
-                bird["traj"]["A"] = (max(ang, 4 - bird["traj"]["C"])) / ((LIMITE) * (LIMITE/3 - LIMITE))
+                bird["traj"]["A"] = (max(ang, 4 - bird["traj"]["C"])) / (((LIMITE) * (LIMITE - LIMITE))/3)
             elif (ord(c) == ord('z') or ord(c) == ord('Z')):
                 xcanhao -= 1
             elif (ord(c) == ord('c') or ord(c) == ord('C')):

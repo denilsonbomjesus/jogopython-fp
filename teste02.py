@@ -28,8 +28,8 @@ def jogar():
               {"x":0, "y":0, "ativa": False, "traj": {"A":0, "B":0, "C":0}},
               {"x":0, "y":0, "ativa": False, "traj": {"A":0, "B":0, "C":0}}]
     
-    pigs = [ { "img": "U + 1F602", "x":0, "y":0, "ativo": False},
-               { "img":"ð", "x":0, "y":0, "ativo": False},
+    pigs = [ { "img": "Ж", "x":0, "y":0, "ativo": False},
+               { "img":"єо̆ҩ", "x":0, "y":0, "ativo": False},
                { "img":"ð", "x":0, "y":0, "ativo": False}]
     
     pontuacaoJogador = 0.0
@@ -44,7 +44,7 @@ def jogar():
     for pig in pigs:
             if not pig["ativo"]:
                 pig["x"] = randint(80, 120)
-                pig["y"] = randint(20, LIMITE_VERT-5)
+                pig["y"] = randint(20, LIMITE_VERT-5) 
                 pig["ativo"] = True
                 porcos.append(pig)
                 gotoxy(pig["x"], pig["y"])
